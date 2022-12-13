@@ -117,8 +117,9 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.0/howto/static-files/
 
-STATIC_URL = 'static/'
-
+STATIC_URL = '/static/'  #static是别名,可以理解为变量,STATICFILES_DIRS的值是static的具体内容
+#放在url中 用static代替引用的静态文件地址
+STATICFILES_DIRS = [os.path.join(BASE_DIR, "static")] #my_statics是我们额外需要在根目录下创建的包.用来存放静态文件的
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
 
