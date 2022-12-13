@@ -7,8 +7,9 @@ from polls.models import Question
 
 def index(request):
     latest_qlist = Question.objects.order_by('-pub_date')[:5]
-    output=','.join([q.question_text for q in latest_qlist])
-    return  HttpResponse(output)
+    # output=','.join([q.question_text for q in latest_qlist])
+    context={'latest_qlist':latest_qlist}
+    return  render(request,"polls/index.html",context)
 
 def detail(request, question_id):
     return HttpResponse("You're looking at question %s." % question_id)
