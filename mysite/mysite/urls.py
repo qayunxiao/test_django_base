@@ -20,5 +20,6 @@ from django.urls import path, include
 urlpatterns = [
     path('admin/', admin.site.urls),
     # http://127.0.0.1:8000/polls/
+    path('/', include("polls.urls")),
     path('polls/', include("polls.urls")),
 ]
